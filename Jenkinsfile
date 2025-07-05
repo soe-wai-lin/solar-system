@@ -12,8 +12,8 @@ pipeline {
                 sh 'npm install --no-audit'
             }
         }
-    }
-    stages {
+    
+    
         stage('NPM dependiencies audi') {
             steps {
                 sh '''
@@ -23,4 +23,5 @@ pipeline {
             }
         }
     }
+    
 }
