@@ -1,6 +1,7 @@
 pipeline {
     agent {
-        label 'Jenkins-Agent'
+        // label 'Jenkins-Agent'
+        any
     }
     tools {
         nodejs 'nodejs-22.6.0'  
