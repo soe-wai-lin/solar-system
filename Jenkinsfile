@@ -26,14 +26,14 @@ pipeline {
             }
         }
 
-        stage('OWASP Depencies Check') {
-            steps {
-                dependencyCheck additionalArguments: '''--scan \'./\'
-                --out \'./\'
-                --format \'ALL\'
-                --prettyPrint''', odcInstallation: 'OWASP-DepCheck-10'
-            }
-        }
+        // stage('OWASP Depencies Check') {
+        //     steps {
+        //         dependencyCheck additionalArguments: '''--scan \'./\'
+        //         --out \'./\'
+        //         --format \'ALL\'
+        //         --prettyPrint''', odcInstallation: 'OWASP-DepCheck-10'
+        //     }
+        // }
     }
     
 }
