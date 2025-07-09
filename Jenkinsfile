@@ -1,9 +1,9 @@
 pipeline {
-    // agent {
-    //     label 'Jenkins-Agent'
-    // }
+    agent {
+        label 'Jenkins-Agent'
+    }
 
-    agent any
+    // agent any
     
     tools {
         nodejs 'nodejs-22.6.0'  
@@ -25,6 +25,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('Code Coverage') {
+            steps {
+                sh '''
+                    npm run coverage
+                    echo $?
+                '''
+            }
+        }
+
 
         // stage('OWASP Depencies Check') {
         //     steps {
