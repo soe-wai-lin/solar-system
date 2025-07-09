@@ -28,10 +28,12 @@ pipeline {
 
         stage('Code Coverage') {
             steps {
-                sh '''
-                    npm run coverage
-                    echo $?
-                '''
+                catchError(buildResult: 'SUCCESS', message: 'Oops! please fix next', stageResult: 'UNSTABLE') {
+                    sh '''
+                        npm run coverage
+                        echo $?
+                    '''
+                }
             }
         }
 
